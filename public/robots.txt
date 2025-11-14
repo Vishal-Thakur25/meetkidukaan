@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://franchise.ecomseekho.com/sitemap.xml
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /private/
+
+# Allow important pages
+Allow: /
+Allow: /about
+Allow: /contact
+Allow: /pricing
+Allow: /apply
+Allow: /franchise-model
+Allow: /services
+Allow: /why-choose-us
+Allow: /success-stories
+Allow: /faq
