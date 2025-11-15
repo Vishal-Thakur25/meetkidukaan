@@ -16,7 +16,7 @@ const HeroSection = () => {
   const { openPopup } = usePopup();
   return (
     <section
-      className="relative min-h-screen flex items-center bg-cover bg-center bg-no-repeat overflow-hidden"
+      className="relative  flex items-center bg-cover bg-center bg-no-repeat overflow-hidden"
       style={{
         backgroundImage: 'url("/images/ecom-store.avif")',
       }}
@@ -64,8 +64,8 @@ const HeroSection = () => {
               className={`text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white `}
             >
               Start Your Own <span className="text-gradient">Business</span>{" "}
-              with <span className="text-gradient">Meet Ki Dukan {""}</span>
-              Franchise
+              with <span className="text-gradient">❝Meet Ki Dukan❞ {""}</span>
+              Product Franchise
             </motion.h1>
 
             <motion.p
@@ -78,27 +78,6 @@ const HeroSection = () => {
               training, proven business model, and ongoing support to build a
               6-figure online business.
             </motion.p>
-
-            {/* Stats */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-              className="grid grid-cols-3 gap-6 max-w-md mx-auto lg:mx-0"
-            >
-              <div className="text-center">
-                <div className="text-2xl font-bold text-gray-200">500+</div>
-                <div className="text-sm text-gray-200">Active Franchises</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-gray-200">₹2.5L+</div>
-                <div className="text-sm text-gray-200">Avg Monthly Revenue</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-gray-200">95%</div>
-                <div className="text-sm text-gray-200">Success Rate</div>
-              </div>
-            </motion.div>
 
             {/* CTA Buttons */}
             <motion.div
@@ -115,9 +94,22 @@ const HeroSection = () => {
                 <ArrowRight className="w-5 h-5 ml-2" />
               </button>
 
-              <button className="btn-secondary text-lg px-8 py-4">
-                <Play className="w-5 h-5 mr-2" />
-                <span>Watch Success Stories</span>
+              <button
+                className="
+                  text-lg px-8 py-4
+                  flex items-center
+                  backdrop-blur-md
+                 bg-white/10
+                  border border-white/30
+                  shadow-lg
+                  rounded-2xl
+                 hover:bg-white/20
+                  transition-all duration-300"
+              >
+                <Play className="w-5 h-5 mr-2 text-white font-bold" />
+                <span className="text-gradient font-bold">
+                  Watch Success Stories
+                </span>
               </button>
             </motion.div>
 

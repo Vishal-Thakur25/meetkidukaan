@@ -5,10 +5,18 @@ import Link from "next/link";
 import { Menu, X, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { usePopup } from "./PopupProvider";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const { openPopup } = usePopup();
+
+  const handleClick = () => {
+    setIsMobileMenuOpen(false);
+    openPopup();
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,14 +28,10 @@ const Header = () => {
 
   const navItems = [
     { href: "/", label: "Home" },
-    { href: "/about", label: "About Us" },
-    { href: "/franchise-model", label: "Franchise Model" },
-    { href: "/pricing", label: "Plans & Pricing" },
-    { href: "/#/services", label: "Services" },
-    { href: "/why-choose-us", label: "Why Choose Us" },
-    { href: "/success-stories", label: "Success Stories" },
-    { href: "/faq", label: "FAQ" },
-    { href: "/contact", label: "Contact" },
+    { href: "#about", label: "About Us" },
+    { href: "#franchise-model", label: "Franchise Model" },
+    { href: "#pricing", label: "Plans & Pricing" },
+    { href: "#services", label: "Services" },
   ];
 
   return (
@@ -43,7 +47,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 flex-shrink-0">
-            <div className="w-35 h-35 bg-hero-gradient rounded-lg flex-center">
+            <div className="w-22 h-22 bg-hero-gradient rounded-lg flex-center">
               <Image
                 src="/images/meetkidukaan.png"
                 width={300}
@@ -60,7 +64,8 @@ const Header = () => {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-white text-md hover:text-primary-600 transition-colors duration-200 font-medium text-sm xl:text-base whitespace-nowrap"
+                className={`text-md hover:text-primary-600 transition-colors duration-200 font-medium text-sm xl:text-base whitespace-nowrap
+                  ${isScrolled ? "text-gray-800" : "text-white"}`}
               >
                 {item.label}
               </Link>
@@ -110,14 +115,10 @@ const Header = () => {
                     {item.label}
                   </Link>
                 ))}
-                <Link
-                  href="/contact"
-                  className="btn-primary mt-4"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
+                <button className="btn-primary mt-4" onClick={handleClick}>
                   <Phone className="w-4 h-4 mr-2" />
                   <span>Book Zoom Call</span>
-                </Link>
+                </button>
               </nav>
             </div>
           </motion.div>

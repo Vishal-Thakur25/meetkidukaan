@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  experimental: {
+    serverComponentsExternalPackages: ["jsonwebtoken", "bcrypt"],
+  },
   reactCompiler: true,
 
   images: {

@@ -6,7 +6,8 @@ import EarningsSection from "@/components/home/EarningsSection";
 import PricingPreview from "@/components/home/PricingPreview";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 import FAQPreview from "@/components/home/FAQPreview";
-import CTASection from "@/components/home/CTASection";
+import CTASection from "../components/ui/CTASection";
+import ServicesSection from "@/components/home/ServiceSection";
 
 export const metadata = {
   title: "MEET KI DUKAAN Franchise - Start Your E-commerce Business Today",
@@ -20,7 +21,9 @@ export default function Home() {
       <HeroSection />
       <AboutSection />
       <FranchiseOverview />
+      <CTASection />
       <BenefitsSection />
+      <ServicesSection />
       <EarningsSection />
       <PricingPreview />
       <TestimonialsSection />

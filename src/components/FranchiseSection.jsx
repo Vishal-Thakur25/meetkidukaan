@@ -1,8 +1,16 @@
 "use client";
 
-import { ShoppingBag, Store, Smartphone, Building2 } from "lucide-react";
+import {
+  ShoppingBag,
+  Store,
+  Smartphone,
+  Building2,
+  ArrowRight,
+} from "lucide-react";
+import { usePopup } from "./PopupProvider";
 
 const FranchiseSection = () => {
+  const { openPopup } = usePopup();
   const platforms = [
     {
       name: "Magento",
@@ -79,24 +87,6 @@ const FranchiseSection = () => {
       </div>
 
       <div className="px-4 relative z-10">
-        {/* Section Header */}
-        {/* <div className="text-center mb-20">
-          <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 rounded-full text-sm font-medium mb-6">
-            🚀 Powerful Platforms
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Choose Your Perfect
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">
-              E-Commerce Platform
-            </span>
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            We specialize in all major e-commerce platforms, ensuring your
-            online store is built with the right technology for your business
-            needs and growth goals.
-          </p>
-        </div> */}
-
         {/* Platforms Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {platforms.map((platform, index) => (
@@ -163,17 +153,14 @@ const FranchiseSection = () => {
 
         {/* Bottom CTA */}
         <div className="text-center mt-16">
-          <div className="inline-flex items-center space-x-4">
-            <div className="text-gray-500">
-              Not sure which platform is right for you?
-            </div>
-            <button
-              className="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-xl hover:from-purple-700 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
-              suppressHydrationWarning={true}
-            >
-              Get Free Consultation
-            </button>
-          </div>
+          <button
+            onClick={openPopup}
+            className="inline-flex items-center md:px-10 md:py-5 px-6 py-4 bg-gradient-to-r from-orange-600 to-orange-400 text-white font-semibold rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:brightness-110"
+            suppressHydrationWarning={true}
+          >
+            BOOK YOUR ZOOM MEET NOW !!
+            <ArrowRight className="ml-3 w-6 h-6" />
+          </button>
         </div>
       </div>
     </section>

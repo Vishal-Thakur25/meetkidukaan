@@ -8,6 +8,7 @@ import {
   Instagram,
   Linkedin,
 } from "lucide-react";
+import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -17,10 +18,16 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-hero-gradient rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">ES</span>
+              <div className="w-36 h-36 bg-hero-gradient rounded-lg flex items-center justify-center">
+                <Image
+                  src="/images/meetkidukaan.png"
+                  width={100}
+                  height={100}
+                  className="w-full"
+                  alt="Meet Ki Dukaan"
+                />
               </div>
-              <span className="text-xl font-bold">MEET KI DUKAAN</span>
+              {/* <span className="text-xl font-bold">MEET KI DUKAAN</span> */}
             </div>
             <p className="text-gray-400 leading-relaxed">
               Empowering entrepreneurs to build successful e-commerce businesses
@@ -159,7 +166,9 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-primary-400" />
-                <span className="text-gray-400">franchise@ecomseekho.com</span>
+                <span className="text-gray-400">
+                  franchise@meetkidukaan.com
+                </span>
               </div>
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-primary-400 mt-1" />

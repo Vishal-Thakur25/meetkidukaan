@@ -3,6 +3,12 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Award, Users, TrendingUp, Target } from "lucide-react";
+import { Bai_Jamjuree } from "next/font/google";
+
+const baiJamjuree = Bai_Jamjuree({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"], // jo weights chahiye add karo
+});
 
 const AboutHero = () => {
   const stats = [
@@ -13,8 +19,8 @@ const AboutHero = () => {
   ];
 
   return (
-    <section className="pt-24 pb-20 bg-gradient-to-br from-primary-50 via-orange-50 to-white">
-      <div className="container-max section-padding">
+    <section className="section-bg-light relative overflow-hidden">
+      <div className="section-padding">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <motion.div
@@ -24,30 +30,21 @@ const AboutHero = () => {
             className="space-y-8"
           >
             <div className="space-y-4">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-                className="inline-block px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-medium"
-              >
-                About MEET KI DUKAAN
-              </motion.div>
-
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
-                className="text-4xl md:text-5xl font-bold leading-tight text-gray-900"
+                className={`text-4xl md:text-5xl font-bold leading-tight text-gray-900 ${baiJamjuree.className}`}
               >
-                Empowering <span className="text-gradient">Entrepreneurs</span>{" "}
-                Since 2020
+                EMPOWERING <span className="text-gradient">ENTERPRENEURS</span>{" "}
+                SINCE 2020
               </motion.h1>
 
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                className="text-xl text-gray-600 leading-relaxed"
+                className="text-xl text-gray-600 leading-relaxed text-start"
               >
                 We are India's leading e-commerce franchise platform, dedicated
                 to transforming ambitious individuals into successful online

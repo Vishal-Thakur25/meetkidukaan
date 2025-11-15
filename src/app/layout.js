@@ -3,8 +3,10 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PopupProvider from "@/components/PopupProvider";
-
+import { ToastContainer } from "react-toastify";
+import "react-datepicker/dist/react-datepicker.css";
 const inter = Inter({ subsets: ["latin"] });
+import "react-toastify/dist/ReactToastify.css";
 
 export const metadata = {
   title: "MEET KI DUKAAN Franchise - Start Your E-commerce Business Today",
@@ -60,6 +62,17 @@ export default function RootLayout({ children }) {
           <Header />
           <main>{children}</main>
           <Footer />
+          <ToastContainer
+            position="top-right"
+            autoClose={3000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+          />
         </PopupProvider>
       </body>
     </html>
